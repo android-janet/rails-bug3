@@ -1,10 +1,10 @@
 <%= form_for @user, url: registrations_path, html: { class: "registration-form" } do |f| %>
   <h1>Register</h1>
 
-  <% if f.object.errors.any? %>
+  <% if @user.errors.any? %>
     <ul class="errors">
-      <% f.object.errors.full_messages.each do |error| %>
-        <li><%= error %></li>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
       <% end %>
     </ul>
   <% end %>
